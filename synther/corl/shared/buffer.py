@@ -57,8 +57,8 @@ class StateNormalizer:
         self.std = std
 
     def to_torch(self, device: str):
-        self.mean = torch.tensor(self.mean, device=device)
-        self.std = torch.tensor(self.std, device=device)
+        self.mean = torch.tensor(self.mean, device='cpu')
+        self.std = torch.tensor(self.std, device='cpu')
 
     def __call__(self, state):
         return (state - self.mean) / self.std
@@ -109,16 +109,16 @@ class ReplayBuffer(ReplayBufferBase):
         self._pointer = 0
 
         self._states = torch.zeros(
-            (buffer_size, state_dim), dtype=torch.float32, device=device
+            (buffer_size, state_dim), dtype=torch.float32, device='cpu'
         )
         self._actions = torch.zeros(
-            (buffer_size, action_dim), dtype=torch.float32, device=device
+            (buffer_size, action_dim), dtype=torch.float32, device='cpu'
         )
-        self._rewards = torch.zeros((buffer_size, 1), dtype=torch.float32, device=device)
+        self._rewards = torch.zeros((buffer_size, 1), dtype=torch.float32, device='cpu')
         self._next_states = torch.zeros(
-            (buffer_size, state_dim), dtype=torch.float32, device=device
+            (buffer_size, state_dim), dtype=torch.float32, device='cpu'
         )
-        self._dones = torch.zeros((buffer_size, 1), dtype=torch.float32, device=device)
+        self._dones = torch.zeros((buffer_size, 1), dtype=torch.float32, device='cpu')
 
     @property
     def empty(self):
@@ -132,7 +132,7 @@ class ReplayBuffer(ReplayBufferBase):
         return self._pointer
 
     def _to_tensor(self, data: np.ndarray) -> torch.Tensor:
-        return torch.tensor(data, dtype=torch.float32, device=self._device)
+        return torch.tensor(data, dtype=torch.float32, device='cpu')
 
     # Loads data in d4rl format, i.e. from Dict[str, np.array].
     def load_d4rl_dataset(self, data: Dict[str, np.ndarray]):
