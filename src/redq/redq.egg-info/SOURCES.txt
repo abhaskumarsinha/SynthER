@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+redq.egg-info/PKG-INFO
+redq.egg-info/SOURCES.txt
+redq.egg-info/dependency_links.txt
+redq.egg-info/requires.txt
+redq.egg-info/top_level.txt

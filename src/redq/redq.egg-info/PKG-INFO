@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: redq
+Version: 0.0.1
+Summary: REDQ algorithm PyTorch implementation
+Author: Xinyue Chen, Che Wang, Zijian Zhou, Keith Ross
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: joblib
+Requires-Dist: gym>=0.17.2

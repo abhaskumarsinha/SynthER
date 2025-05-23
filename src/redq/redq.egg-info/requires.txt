@@ -1,0 +1,3 @@
+numpy
+joblib
+gym>=0.17.2
