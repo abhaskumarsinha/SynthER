@@ -1,0 +1,34 @@
+{
+  "os": "Linux-6.1.123+-x86_64-with-glibc2.35",
+  "python": "CPython 3.11.12",
+  "startedAt": "2025-05-23T16:16:49.239843Z",
+  "args": [
+    "--dataset",
+    "halfcheetah-medium-replay-v2"
+  ],
+  "program": "/content/SynthER/synther/diffusion/train_diffuser.py",
+  "codePath": "synther/diffusion/train_diffuser.py",
+  "git": {
+    "remote": "https://github.com/conglu1997/SynthER.git",
+    "commit": "4612ff2471298cc17aa4b8cc9df1d4e5dd611654"
+  },
+  "root": "/content/SynthER",
+  "host": "1cec78fa4827",
+  "executable": "/usr/bin/python3",
+  "codePathLocal": "synther/diffusion/train_diffuser.py",
+  "cpu_count": 1,
+  "cpu_count_logical": 2,
+  "disk": {
+    "/": {
+      "total": "115658190848",
+      "used": "44421771264"
+    }
+  },
+  "memory": {
+    "total": "13608370176"
+  },
+  "cpu": {
+    "count": 1,
+    "countLogical": 2
+  }
+}
